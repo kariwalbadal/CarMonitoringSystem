@@ -4,7 +4,7 @@ import numpy as np
 
 car_cascade = cv2.CascadeClassifier('cars.xml')
 
-cap = cv2.VideoCapture('video2.avi')
+cap = cv2.VideoCapture('video.avi')
 f = 0
 while True:
 	f = f + 1
@@ -27,7 +27,7 @@ while True:
     		average_color_per_row = np.average(res, axis=0)
     		avg_color = np.average(average_color_per_row, axis=0)
     		average_color = np.uint8(avg_color)
-    		print average_color
+    		#print average_color
     		if average_color[2] + average_color[0] + average_color[1] > 0:
     			i = i + 1
 		cv2.rectangle(img, (x+5,y+5), (x+w-5, y+h-5), (255,0,0), 2)
